@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>14-03</title>
+</head>
+
+<body>
+    <h1>UNIVERSITY</h1>
+    <div id="get_result"></div>
+    <button onclick="get('pulpit')">pulpit</button>
+    <button onclick="get('auditorium')">auditorium</button>
+    <button onclick="get('auditorium_type')">auditorium_type</button>
+    <button onclick="get('faculty')">faculty</button>
+    <button onclick="get('teacher')">teacher</button>
+    <button onclick="get('subject')">subject</button>
+
+    <script>
+        var jsonArray;
+        var templateObject;
+        var counter = 0;
+        var currentTable = "";
+
+        function get(get_table) {
+            currentTable = get_table;
+            console.log('get');
+            fetch(`http://localhost:3000/api/${get_table}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            }).then(res => {
+                return res.json();
+            }).then(data => {
+                if(data.code !== undefined){
+                    alert(data.code + ' ' + data.message);
+                }
+                else {
+
+                    console.log(data);
+                    jsonArray = data;
+                    templateObject = data[0];
+                    console.log(templateObject);
+                    get_result.innerHTML = "";
+                     counter = 0;
+                    var keys;
+                    var values;
+
+
+                    data.forEach(el => {
+                        keys = Object.keys(el);
+                        values = Object.values(el);
+                        var table_value = "";
+
+                        for (var i = 0; i < keys.length; i++) {
+                            table_value += keys[i] + ": "
+                                + `<input type="text" value='${values[i]}' id='${keys[i]}${counter}' /> `;
+                        }
+                        table_value += `<button onclick="delete_element('${keys[0]}','${counter}', '${values[0]}')">Delete</button>`
+                        table_value += `<button onclick="update_element('${keys[0]}', '${counter}')">Update</button>`
+                        get_result.innerHTML += table_value + "<br/>";
+                        counter++;
+                    });
+
+                    for (var i = 0; i < keys.length; i++) {
+                        get_result.innerHTML += keys[i] + ": "
+                            + `<input type="text" id='${keys[i]}${counter}' /> `;
+                    }
+                    get_result.innerHTML += `<button onclick="insert_element('${keys[0]}', '${counter}')">Insert</button>`;
+                    get_result.innerHTML += "<br/>";
+                    counter++;
+                } })
+        }
+
+        function delete_element(table, num, id) {
+            console.log("delete_element: table:" + table + " counter: " + id);
+
+            if(`${document.getElementById(`${table}${num}`).value}` === '') {
+                alert("Fill in all the fields");
+                get(table);
+                return;
+            }
+
+            fetch(`http://localhost:3000/api/${table}/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": 'application/json',
+                    "Accept": 'application/json'
+                }
+
+            }).then(res => {
+                return res.json();
+            }).then(data => {
+                if(data.code !== undefined){
+                    alert('ERROR ' + data.code + ': ' + data.message);
+                    get(table);
+
+                }
+                else {
+
+                    alert(data.message);
+                    get(table);
+                }
+              console.log(data.message);
+            })
+        }
+
+        function update_element(table, num) {
+            console.log("UPDATE");
+
+
+            if(`${document.getElementById(`${table}${num}`).value}` === '') {
+                alert("Fill in all the fields");
+                get(table);
+                return;
+            }
+
+            console.log(jsonArray[num]);
+
+            var updObject = jsonArray[num];
+            var updKeys = Object.keys(updObject);
+            var updValues = Object.values(updObject);
+
+            for (var i = 0; i < updKeys.length; i++) {
+                updValues[i] = document.getElementById(updKeys[i] + num).value;
+                console.log(updValues[i]);
+                updObject[updKeys[i]] = updValues[i];
+            }
+            console.log(updObject);
+
+            fetch(`http://localhost:3000/api/${table}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": 'application/json',
+                    "Accept": 'application/json'
+                },
+                body: JSON.stringify(updObject)
+            }).then(res => {
+
+                return res.json();
+            }).then(data => {
+                if (data.code !== undefined) {
+                    alert('ERROR ' + data.code + ': ' + data.message);
+                    get(table);
+                }
+                else {
+                    alert(data.message);
+                   get(table);
+                }
+                console.log(data.message);
+            });
+
+
+        }
+
+
+
+        function insert_element(table, num) {
+            console.log("INSERT");
+
+               if(`${document.getElementById(`${table}${num}`).value}` === '') {
+                    alert("Fill in all the fields");
+                    get(table);
+                    return;
+                }
+
+            var insertObject = jsonArray[num-1];
+            var updKeys = Object.keys(insertObject);
+            var updValues = Object.values(insertObject);
+
+            for (var i = 0; i < updKeys.length; i++) {
+                updValues[i] = document.getElementById(updKeys[i] + num).value;
+                console.log(updValues[i]);
+                insertObject[updKeys[i]] = updValues[i];
+            }
+            console.log(insertObject);
+
+            fetch(`http://localhost:3000/api/${table}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": 'application/json',
+                    "Accept": 'application/json'
+                },
+                body: JSON.stringify(insertObject)
+            }).then(res => {
+                return res.json();
+            }).then(data => {
+                if (data.code !== undefined) {
+                    alert('ERROR ' + data.code + ': ' + data.message);
+                    get(table);
+                } else {
+                    alert(data.message);
+                    get(table);
+                }
+                console.log(data.message);
+            });
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

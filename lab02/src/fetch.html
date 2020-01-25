@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="getText()">
+<div></div>
+<script>
+    function getText() {
+        let settings = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'text/plain',
+            }
+        };
+        fetch('http://localhost:5000/api/name', settings)
+            .then(async response => {
+                document.getElementsByTagName("div")[0].innerHTML = await response.text();
+            });
+    }
+</script>
+</body>
+</html>

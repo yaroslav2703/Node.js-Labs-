@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <body>
+        <h1>10-01</h1>
+        <button onclick="startWS()">start WS</button>
+        <button onclick="startBroadcastWS()">broadcast WS</button>
+        <h1>Received:</h1>
+        <div id="response"></div>
+        <br><br>
+        <h1>Sent:</h1>
+        <div id="request"></div>
+
+        <script>
+            let messageInterval;
+            let requestCount = 1;
+
+            function startWS() {
+                const socket = new WebSocket('ws:/localhost:4000');
+
+                socket.onmessage = message => {
+                    let newMessage = document.createElement('div');
+                    newMessage.innerText = "server: "+ JSON.parse(message.data).server + " message";
+                    document.getElementById('response').appendChild(newMessage);
+                };
+
+                messageInterval = setInterval(() => {
+                    let message = JSON.stringify({client: requestCount++});
+                    socket.send(message);
+
+                    let newMessage = document.createElement('div');
+                    newMessage.innerText ="client: " + JSON.parse( message).client;
+                    document.getElementById('request').appendChild(newMessage);
+                }, 3000);
+
+                setTimeout(() => {
+                    clearInterval(messageInterval);
+                    socket.close();
+                }, 25000);
+            }
+
+            function startBroadcastWS() {
+                const socket = new WebSocket('ws:/localhost:5000');
+                socket.onmessage = message => {
+                      let newMessage = document.createElement('div');
+                    newMessage.innerText = 'Broadcast message: ' + message.data;
+                    document.getElementById('response').appendChild(newMessage);
+                   
+                    socket.close();
+                };
+                socket.onopen = () => {
+                    socket.send('Client connected');
+                };
+            }
+        </script>
+    </body>
+</html>

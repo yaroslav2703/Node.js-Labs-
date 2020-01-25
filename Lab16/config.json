@@ -1,0 +1,23 @@
+{
+    "mssql": {
+        "driver": "msnodesqlv8",
+        "connectionString": "Driver={SQL Server Native Client 11.0};Server={DESKTOP-53J4501\\SQLEXPRESS};Database={Nodejs};Trusted_Connection={yes};"
+    },
+    "oracle": {
+        "user": "system",
+        "password": "qwerty123",
+        "connectString": "localhost:1521/ORCLCDB"
+    },
+    "objects": {
+        "faculties": "FACULTY",
+        "pulpits": "PULPIT",
+        "subjects": "SUBJECT",
+        "auditoriumstypes": "AUDITORIUM_TYPE",
+        "auditoriums": "AUDITORIUM",
+        "teacher": "TEACHER"
+    },
+    "http": {
+        "port": 3000,
+        "host": "localhost"
+    }
+}

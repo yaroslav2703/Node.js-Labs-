@@ -1,0 +1,10 @@
+{
+  "tcp": {
+    "host": "localhost",
+    "port": 8000
+  },
+  "udp": {
+    "host": "localhost",
+    "port": 8000
+  }
+}

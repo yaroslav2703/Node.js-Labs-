@@ -1,0 +1,9 @@
+{
+  "name": "lab6",
+  "version": "1.0.0",
+  "author": "YaroslavPitsukha",
+  "dependencies": {
+    "sendmail": "^1.6.1",
+    "nodemailer": "^6.4.2"
+  }
+}

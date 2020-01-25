@@ -1,0 +1,17 @@
+{
+  "name": "lab14",
+  "version": "1.0.0",
+  "dependencies": {
+    "content-type": "^1.0.4",
+    "graphql": "^14.5.8",
+    "http-errors": "^1.7.3",
+    "inherits": "latest",
+    "msnodesqlv8": "^0.8.6",
+    "mssql": "^6.0.1",
+    "oracledb": "^4.1.0",
+    "raw-body": "^2.4.1",
+    "setprototypeof": "latest",
+    "statuses": "latest",
+    "toidentifier": "latest"
+  }
+}

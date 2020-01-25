@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "115888d9-d746-44fe-be5a-b8a584ab2dee",
+		"name": "NodeJS_16",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "query_getTeacherByFaculty",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getTeacherByFaculty($Id: String = \"ТОВ\"){\n  getTeachers(FACULTY: $Id) {\n    TEACHER,\n    TEACHER_NAME\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{nodejs_16}}",
+					"host": [
+						"{{nodejs_16}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query_getTeacherByName",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getTeacherByName($Id: String = \"СМЛВ\"){\n  getTeachers(TEACHER: $Id) {\n    TEACHER,\n    TEACHER_NAME\n  }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{nodejs_16}}",
+					"host": [
+						"{{nodejs_16}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query_getTeachers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getTeachers{\n  getTeachers{\n    PULPIT,\n    TEACHER,\n    TEACHER_NAME\n  }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{nodejs_16}}",
+					"host": [
+						"{{nodejs_16}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query_getPulpits",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getPulpits{\n  getPulpits{\n    PULPIT,\n    PULPIT_NAME,\n    FACULTY\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{nodejs_16}}",
+					"host": [
+						"{{nodejs_16}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mutation_setPulpit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation setPulpit($id: String! = \"xxx\", $name: String! = \"QWERTY123\", $faculty: String! = \"ТОВ\"){\n  setPulpit(PULPIT: $id, PULPIT_NAME: $name, FACULTY:$faculty) {\n    PULPIT,\n    PULPIT_NAME,\n    FACULTY\n  }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{nodejs_16}}",
+					"host": [
+						"{{nodejs_16}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mutation_delPulpit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation delPulpit($Id: String! = \"xxx\"){\n  delPulpit(id: $Id) {\n    PULPIT,\n    PULPIT_NAME,\n    FACULTY\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{nodejs_16}}",
+					"host": [
+						"{{nodejs_16}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MAIN_INFO_IntrospectionQuery",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": " query IntrospectionQuery {\n    __schema {\n      queryType { name }\n      mutationType { name }\n      subscriptionType { name }\n      types {\n        ...FullType\n      }\n      directives {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        locations\n      }\n    }\n  }\n\n  fragment FullType on __Type {\n    kind\n    name\n    description\n    fields(includeDeprecated: true) {\n      name\n      description\n      args {\n        ...InputValue\n      }\n      type {\n        ...TypeRef\n      }\n      isDeprecated\n      deprecationReason\n    }\n    inputFields {\n      ...InputValue\n    }\n    interfaces {\n      ...TypeRef\n    }\n    enumValues(includeDeprecated: true) {\n      name\n      description\n      isDeprecated\n      deprecationReason\n    }\n    possibleTypes {\n      ...TypeRef\n    }\n  }\n\n  fragment InputValue on __InputValue {\n    name\n    description\n    type { ...TypeRef }\n    defaultValue\n  }\n\n  fragment TypeRef on __Type {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n        }\n      }\n    }\n  }",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{nodejs_16}}",
+					"host": [
+						"{{nodejs_16}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

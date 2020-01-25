@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Pitsukha Y.A.",
+    "bday": "1999-10-28",
+    "speciality": "POIT"
+  },
+  {
+    "id": 2,
+    "name": "Sidarov I.I.",
+    "bday": "2000-03-21",
+    "speciality": "ISIT"
+  },
+  {
+    "id": 3,
+    "name": "Ivanov I.D.",
+    "bday": "2001-03-21",
+    "speciality": "POIBMS"
+  }
+]

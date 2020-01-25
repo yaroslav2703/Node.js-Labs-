@@ -1,0 +1,7 @@
+{
+  "name": "Lab10",
+  "version": "1.0.0",
+  "dependencies": {
+    "ws": "latest"
+  }
+}

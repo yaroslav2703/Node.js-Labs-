@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="57b1a701-1306-4894-ac7e-b413877590d4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="package.json" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1W6cR8Uh2kPou4yUrUBRDjmqiHn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="57b1a701-1306-4894-ac7e-b413877590d4" name="Default Changelist" comment="" />
+      <created>1578473474416</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578473474416</updated>
+      <workItem from="1578473477312" duration="10985000" />
+      <workItem from="1579198846843" duration="15625000" />
+      <workItem from="1579287982255" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/lib/MsNodeSqWrapperModule.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/lib/MsNodeSqWrapperModule.js" />
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/samples/typescript/table-gen.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/samples/typescript/table-gen.js" />
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/samples/typescript/mssql-demo.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/samples/typescript/mssql-demo.js" />
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/samples/typescript/DriverModuleTest.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/samples/typescript/DriverModuleTest.js" />
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/samples/typescript/simple-demo.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/samples/typescript/simple-demo.js" />
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/unit.tests/cmd-test.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/msnodesqlv8/unit.tests/cmd-test.js" />
+      </list>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578474735773">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1578474735773" />
+    <state x="462" y="10" width="611" height="804" key="find.popup" timestamp="1578483798504">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="462" y="10" width="611" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1578483798504" />
+  </component>
+</project>

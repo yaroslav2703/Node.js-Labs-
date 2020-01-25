@@ -1,0 +1,3 @@
+﻿  ClientU.cpp
+d:\3 курс\пибсп\лабы\лаба 3\clientu\clientu\clientu.cpp(52): warning C4244: аргумент: преобразование "double" в "DWORD", возможна потеря данных
+  ClientU.vcxproj -> D:\3 КУРС\ПиБСП\Лабы\лаба 3\ClientU\Debug\ClientU.exe
