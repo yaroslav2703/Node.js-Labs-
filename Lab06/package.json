@@ -4,6 +4,6 @@
   "author": "YaroslavPitsukha",
   "dependencies": {
     "sendmail": "^1.6.1",
-    "nodemailer": "^6.4.2"
+    "nodemailer": "^6.4.16"
   }
 }
